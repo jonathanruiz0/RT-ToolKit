@@ -1,19 +1,33 @@
-
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-// screens
+import ReferenceScreen from './screens/ReferenceScreen';
 import CalculatorScreen from './screens/CalculatorScreen';
 import InterpretScreen from './screens/InterpretScreen';
 import HistoryScreen from './screens/HistoryScreen';
+import PreceptorScreen from './screens/PreceptorScreen';
+import ProceduresScreen from './screens/ProceduresScreen';
+import EducationScreen from './screens/EducationScreen';
 
-// theme
 import { colors } from './theme';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+function ReferenceStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="ReferenceHome" component={ReferenceScreen} options={{ title:'Clinical Reference' }} />
+      <Stack.Screen name="Calculator" component={CalculatorScreen} options={{ title:'Calculator' }} />
+      <Stack.Screen name="Interpret" component={InterpretScreen} options={{ title:'ABG Interpretation' }} />
+      <Stack.Screen name="History" component={HistoryScreen} options={{ title:'History' }} />
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -29,17 +43,19 @@ export default function App() {
             tabBarIcon: ({ color, size }) => {
               let iconName;
               switch (route.name) {
-                case 'Calculator': iconName = 'calculator-variant'; break;
-                case 'Interpret': iconName = 'notes-medical'; break;
-                case 'History':   iconName = 'history'; break;
+                case 'Reference':  iconName = 'book-open-variant'; break;
+                case 'Preceptor':  iconName = 'account-tie'; break;
+                case 'Procedures': iconName = 'clipboard-text'; break;
+                case 'Education':  iconName = 'school'; break;
               }
               return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
             }
           })}
         >
-          <Tab.Screen name="Calculator" component={CalculatorScreen} />
-          <Tab.Screen name="Interpret"  component={InterpretScreen}  />
-          <Tab.Screen name="History"    component={HistoryScreen}    />
+          <Tab.Screen name="Reference" component={ReferenceStack} />
+          <Tab.Screen name="Preceptor" component={PreceptorScreen} />
+          <Tab.Screen name="Procedures" component={ProceduresScreen} />
+          <Tab.Screen name="Education" component={EducationScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaView>

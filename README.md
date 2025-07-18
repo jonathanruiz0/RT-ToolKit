@@ -1,50 +1,25 @@
-# Welcome to your Expo app 👋
+# RT-Toolkit
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+RT-Toolkit is an offline-friendly mobile reference and training app for respiratory therapists, students and clinical preceptors. The project uses [Expo](https://expo.dev) with React Native so the same codebase runs on Android, iOS and web.
 
-## Get started
+## Features
+
+- **Clinical Reference** – calculators and an ABG interpretation helper. Calculation history is stored locally for offline access.
+- **Preceptor Tools** – simple student tracker to log observations during clinical rotations.
+- **Procedural Guides** – step-by-step checklists for common bedside procedures.
+- **Education** – lightweight quiz module for exam prep.
+
+The app is designed to be easily extended with more content and tools in future updates.
+
+## Getting Started
 
 1. Install dependencies
-
    ```bash
    npm install
    ```
-
-2. Start the app
-
+2. Start the development server
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The app can be opened in an Android emulator, iOS simulator or Expo Go.
